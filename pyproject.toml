@@ -1,0 +1,33 @@
+[project]
+name = "asg-expense-tracker"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "dotenv>=0.9.9",
+    "jupyter>=1.1.1",
+    "matplotlib>=3.10.6",
+    "notebook>=7.4.5",
+    "pandas>=2.3.2",
+    "pdfplumber>=0.11.7",
+    "plotly>=6.3.0",
+    "pymupdf>=1.26.4",
+    "ruff>=0.13.0",
+    "seaborn>=0.13.2",
+    "streamlit>=1.49.1",
+    "tabula-py>=2.10.0",
+]
+
+[tool.ruff]
+line-length = 200
+
+[tool.ruff.lint]
+select = ["I"]  # Enable import sorting
+fixable = ["I"]  # Allow ruff to fix import sorting issues
+
+[tool.ruff.lint.isort]
+# Configure import sorting behavior
+known-first-party = ["asg_expense_tracker"]
+force-single-line = false
+combine-as-imports = true
