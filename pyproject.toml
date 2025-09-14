@@ -17,6 +17,7 @@ dependencies = [
     "seaborn>=0.13.2",
     "streamlit>=1.49.1",
     "tabula-py>=2.10.0",
+    "watchdog>=6.0.0",
 ]
 
 [tool.ruff]

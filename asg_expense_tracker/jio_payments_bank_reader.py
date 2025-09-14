@@ -116,7 +116,6 @@ class JioPaymentsBankReader:
             return [{'dataframe': self.df}]  # Return the entire dataframe if no salary found
 
         # Sort by date to ensure chronological order
-        add_expense_amount_transactions = add_expense_amount_transactions.sort_values('Date')
         salary_dates = add_expense_amount_transactions['Date'].tolist()
         
         print(f"Found {len(add_expense_amount_transactions)} 'add expense amount transaction(s)':")
@@ -139,7 +138,6 @@ class JioPaymentsBankReader:
                 period_name = f"jio_{start_date.strftime('%Y_%m_%d')}_to_{end_date.strftime('%Y_%m_%d')}"
             
             if not period_df.empty:
-                period_df = period_df.sort_values('Date') # Sort by date
                 # Calculate period statistics
                 total_expenses = period_df['Withdrawal'].sum()
                 total_income = period_df['Deposit'].sum()
@@ -170,7 +168,7 @@ class JioPaymentsBankReader:
         return clipped_periods
 
 if __name__ == "__main__":
-    pdf_name = "00272171124045613-Sep-2025 15_53_33.pdf"
+    pdf_name = "00272171124045614-Sep-2025 14_38_00.pdf"
     pdf_path = os.path.join(STORED_PDF_FILES_DIR, pdf_name)
     print(f"PDF path: {pdf_path}")
     PASSWORD = "ARMA0304"
